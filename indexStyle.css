@@ -1,0 +1,169 @@
+html {
+    display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   flex-direction: column;
+    text-shadow: 1px 1px 5px black;
+    font-family: system-ui;
+
+    
+}
+
+#header {
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/02/grey-honeycomb-pattern.jpg");
+    background-size: cover;
+    text-align: center;
+    color: #bffaf4;
+    font-weight: 700;
+    min-height: 120px;
+    margin: 0;
+    padding: 0;
+    border-top-style: inset;
+}
+
+a {
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/02/grey-honeycomb-pattern.jpg");
+    background-size: cover;
+    font-size: 18px;
+    display: block;
+    border: 2px solid #bffaf4;
+    border-radius: 10px;
+    color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #bffaf4;
+}
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+  }
+
+ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    margin-right: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://images.unsplash.com/photo-1566305977571-5666677c6e98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHNlYW1sZXNzJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-size: cover;
+    padding-bottom: 20px;
+}
+
+.col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+canvas, table {
+    margin-top: 20px;
+    border: 2px solid #bffaf4;
+}
+
+body {
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+    max-width: 1000px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.433), rgba(0, 0, 0, 0.638)), url("https://images.unsplash.com/photo-1566305977571-5666677c6e98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHNlYW1sZXNzJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-size: cover;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+  }
+
+  @keyframes fadeInAnimation { 
+   0% { 
+       opacity: 0; 
+   } 
+   100% { 
+       opacity: 1; 
+   } 
+ }
+
+
+#Bench, #Squat, #Deadl {
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/02/grey-honeycomb-pattern.jpg");
+    background-size: cover;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+    text-shadow: 1px 1px 5px black;
+    border-radius: 4px;
+}
+
+button {
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/02/grey-honeycomb-pattern.jpg");
+    background-size: auto;
+    font-size: 18px;
+    font-weight: 700;
+    color: #bffaf4;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid #bffaf4;
+    cursor: pointer;
+}
+
+button:hover, a:hover {
+    opacity: calc(0.6);
+}
+
+canvas {
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+    background-image: linear-gradient(rgba(107, 107, 107, 0.337), rgba(75, 75, 75, 0.316)), url("https://free4kwallpapers.com/uploads/originals/2015/09/02/grey-honeycomb-pattern.jpg");
+    background-size: auto;
+    border-radius: 5px;
+    width: 95%;
+}
+
+
+table {
+    color: #bffaf4;
+    background-image: linear-gradient(rgba(82, 81, 81, 0.35), rgba(67, 66, 66, 0.35)), url("https://free4kwallpapers.com/uploads/originals/2015/09/02/grey-honeycomb-pattern.jpg");
+    background-size: auto;
+    width: 50%;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+
+footer {
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/02/grey-honeycomb-pattern.jpg");
+    background-size: cover;
+    text-align: center;
+    color: #bffaf4;
+    font-family: system-ui;
+    font-weight: 700;
+    min-height: 50px;
+    padding-top: 5px;
+}
+@media(min-width:700px) {
+    canvas{
+        width: 70%;
+    }
+    table{
+        width: 20%;
+    }
+}
+@media (max-width:450px) {
+    a {
+      font-size: 13px;
+    } 
+    li{
+        margin-right: 5px;
+       }
+  }

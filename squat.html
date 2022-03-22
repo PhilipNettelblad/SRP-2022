@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRP Bench</title>
+  <link rel="shortcut icon" type="image/jpg"
+    href="https://www.freeiconspng.com/uploads/--equipment-sport-tool-weightlifting-icon--icon-search-engine-23.png" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header id="header">
+    <h1>SRP (Set Row Progression)</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="benchPress.html">BenchPress</a></li>
+        <li><a class="disabled" href="squat.html">Squat</a></li>
+        <li><a href="deadlift.html">Deadlift</a></li>
+      </ul>
+    </nav>
+    <h1 ref="id">Squat</h1>
+    <button @click="clearAll" class="hide" v-show='toggle'> Clear workouts</button>
+    <p id="filler" class="hide" v-show='!toggle'></p>
+  </header>
+  <main>
+    <h2>Next Workout</h2>
+    <div class="hide" v-show='!toggle'>
+      <h3>Set weight for 5x5.</h3>
+      <input type="number" v-model.number="startWeight">
+      <button @click="setStartingWeight" class="btn btn-primary">Set starting weight</button>
+    </div>
+    <div class="hide" v-show='toggle'>
+      <table>
+        <tr>
+          <th>Date:</th>
+          <th colspan="2">{{date}}</th>
+        </tr>
+        <tr>
+          <th>workout nr:</th>
+          <th colspan="2">{{workoutNr}}</th>
+        </tr>
+        <tr>
+          <th>Total:</th>
+          <th colspan="2">{{total}}</th>
+        </tr>
+        <tr>
+          <th>Set</th>
+          <th>Weight</th>
+          <th>Reps</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>{{workoutWeight[0]}}</td>
+          <td><input type="number" v-model.number="reps[0]"></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>{{workoutWeight[1]}}</td>
+          <td><input type="number" v-model.number="reps[1]"></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>{{workoutWeight[2]}}</td>
+          <td><input type="number" v-model.number="reps[2]"></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>{{workoutWeight[3]}}</td>
+          <td><input type="number" v-model.number="reps[3]"></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>{{workoutWeight[4]}}</td>
+          <td><input type="number" v-model.number="reps[4]"></td>
+        </tr>
+      </table>
+      <button @click="saveCompletedWorkout" class="btn btn-primary">
+        End Workout
+      </button>
+    </div>
+    <ul>
+      <li v-for="(completedWorkout, index) in completedWorkouts" :key="index">
+        <table>
+          <tr>
+            <th>Date:</th>
+            <th>{{completedWorkout.date}}</th>
+            <th><button class="deleteThis" @click="deleteThis(index)">❌</button></th>
+          </tr>
+          <tr>
+            <th>workout nr:</th>
+            <th colspan="2">{{completedWorkout.workoutNr}}</th>
+          </tr>
+          <tr>
+            <th>Total:</th>
+            <th colspan="2">{{completedWorkout.total}}</th>
+          </tr>
+          <tr>
+            <th>Set</th>
+            <th>Weight</th>
+            <th>Reps</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>{{completedWorkout.workoutWeight[0]}}</td>
+            <td>{{completedWorkout.reps[0]}}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>{{completedWorkout.workoutWeight[1]}}</td>
+            <td>{{completedWorkout.reps[1]}}</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>{{completedWorkout.workoutWeight[2]}}</td>
+            <td>{{completedWorkout.reps[2]}}</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>{{completedWorkout.workoutWeight[3]}}</td>
+            <td>{{completedWorkout.reps[3]}}</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>{{completedWorkout.workoutWeight[4]}}</td>
+            <td>{{completedWorkout.reps[4]}}</td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <p>Created by: Daniel Bjärefors & Philip Nettelblad Copyright © - 2022</p>
+  </footer>
+</body>
+</html>
